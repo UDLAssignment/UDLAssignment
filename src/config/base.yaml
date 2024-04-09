@@ -1,0 +1,50 @@
+
+variational_family: 
+
+name: disc_p_mnist
+
+experiment: disc_p_mnist
+
+n_classes: 10
+h_dim: 100
+layer_width: 100
+n_hidden_layers: 2
+n_tasks: 10
+multiheaded: False
+coreset_size: 200
+epochs: 100
+batch_size: 256
+train_full_coreset: True
+run_mle_init: True
+mnist_flattened_dim: 784
+lr: 0.001
+num_train_samples: 10
+initial_posterior_var: 1e-6
+
+posterior_type: meanfield
+
+# Args for mappedvar
+postvar_weight_rank: 1
+
+shared_h_dims: [100]
+mc_sampling_n: 50
+
+module_type: new
+
+device: cuda
+
+flow_base_dim: 50
+num_kl_estimate_samples: 10000
+
+complete_flow_rank: 10
+
+kl_loss_coef: 1
+kl_base_loss_coef: 1
+
+test: False
+
+num_flow_layers: 1
+
+transform_swaps:
+
+data: mnist
